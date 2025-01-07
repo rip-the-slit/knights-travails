@@ -78,6 +78,13 @@ export default class LinkedList {
     const nextNext = prevNode.next.next;
     if (prevNode) prevNode.next = nextNext ? nextNext : null;
   }
+  traverse(callback) {
+    let node = this.#head;
+    while (node) {
+      callback(node.value)
+      node = node.next;
+    }
+  }
 }
 
 class Node {
